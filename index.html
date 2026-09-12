@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>WebStudio — محرر محلي</title>
+  <style id="embedded-styles">
+:root{--bg:#1e1e1e;--panel:#252526;--panel2:#2d2d2d;--hover:#2a2d2e;--active:#37373d;--border:#3c3c3c;--text:#cccccc;--muted:#858585;--dim:#6a6a6a;--blue:#007acc;--blue2:#1a8ad4;--green:#4ec9b0;--yellow:#dcdcaa;--red:#f44747;--user:#1a3a5c}*{box-sizing:border-box;margin:0;padding:0}html,body,#app{height:100%;width:100%;overflow:hidden}body{font-family:"Cairo","Segoe UI",Tahoma,Arial,sans-serif;background:var(--bg);color:var(--text);font-size:13px}button,input,textarea,select{font:inherit}button{border:0;color:inherit;cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}input,textarea,select{outline:0;color:#fff;background:#3c3c3c;border:1px solid #3c3c3c;border-radius:4px}input:focus,textarea:focus,select:focus{border-color:var(--blue)}.app-shell{height:100%;display:flex;flex-direction:column;background:var(--bg)}.titlebar{height:36px;flex:0 0 36px;display:flex;align-items:center;justify-content:space-between;padding:0 12px;background:#323233;border-bottom:1px solid #252526;user-select:none}.window-brand,.title-actions{display:flex;align-items:center;gap:7px}.traffic{display:inline-block;width:12px;height:12px;border-radius:50%}.traffic.red{background:#ff5f57}.traffic.yellow{background:#ffbd2e}.traffic.green{background:#28ca41}.brand-name{color:var(--muted);font:12px "JetBrains Mono","Cascadia Code",monospace;margin-left:11px}.title-actions{gap:6px}.top-btn{background:#3c3c3c;color:var(--muted);font-size:12px;padding:3px 9px;border-radius:4px;transition:.15s}.top-btn:hover,.top-btn.active{color:#fff;background:var(--blue)}.workspace{display:flex;min-height:0;flex:1}.activity-bar{width:48px;flex:0 0 48px;display:flex;flex-direction:column;align-items:center;background:#333;border-right:1px solid #252526}.activity{width:48px;height:49px;position:relative;background:transparent;color:var(--muted);font-size:26px;font-family:Arial,sans-serif;font-weight:300;transition:.15s}.activity:hover,.activity.active{color:#fff}.activity.active:before{content:"";position:absolute;left:0;top:9px;bottom:9px;width:2px;background:#fff;border-radius:0 2px 2px 0}.activity-bottom{margin-top:auto;margin-bottom:7px}.activity-bottom .activity{height:40px;font-size:21px}.side-panel{width:250px;flex:0 0 250px;background:var(--panel);border-right:1px solid var(--border);overflow:hidden}.center-column{min-width:0;flex:1;display:flex;flex-direction:column}.editor-preview-area{min-height:0;flex:1;display:flex;overflow:hidden}.chat-panel{width:340px;flex:0 0 340px;background:var(--panel);border-left:1px solid var(--border);overflow:hidden}.hidden{display:none!important}.panel-shell{height:100%;display:flex;flex-direction:column;background:var(--panel)}.panel-heading{height:38px;display:flex;align-items:center;justify-content:space-between;padding:0 12px;border-bottom:1px solid var(--border);color:#bbb;font-size:11px;font-weight:700;letter-spacing:1px}.panel-heading .heading-actions{display:flex;gap:4px}.icon-btn{background:transparent;color:var(--muted);font-size:17px;padding:3px 5px;border-radius:4px}.icon-btn:hover{background:var(--active);color:#fff}.settings-visible{font-size:11px;white-space:nowrap}.tree-tools{display:flex;align-items:center;gap:2px}.tree-scroll{flex:1;overflow:auto;padding:5px 0}.tree-row{height:26px;display:flex;align-items:center;gap:5px;padding:0 8px;white-space:nowrap;cursor:pointer;color:#ccc;user-select:none}.tree-row:hover{background:var(--hover)}.tree-row.selected{background:var(--active);color:#fff}.tree-row .caret{width:12px;color:#aaa;text-align:center;font-size:10px}.tree-row .node-icon{width:16px;text-align:center;font-size:14px}.tree-row .node-name{overflow:hidden;text-overflow:ellipsis;direction:ltr;text-align:left}.folder-icon{color:#dcb67a}.file-html{color:#e44d26}.file-css{color:#1572b6}.file-js{color:#f7df1e}.file-json{color:#f7df1e}.file-md{color:#519aba}.file-img{color:#a074c8}.file-default{color:#858585}.new-item{display:flex;gap:5px;padding:5px 8px;border-bottom:1px solid var(--border)}.new-item input{min-width:0;flex:1;padding:5px 7px;font-size:12px}.editor-shell{height:100%;width:100%;display:flex;flex-direction:column;background:var(--bg)}.editor-tabs{height:35px;display:flex;background:var(--panel);border-bottom:1px solid var(--border);overflow:auto;direction:ltr}.editor-tab{display:flex;align-items:center;gap:8px;min-width:115px;max-width:190px;padding:0 10px;border-right:1px solid var(--border);color:var(--muted);font-size:12px;background:var(--panel);cursor:pointer}.editor-tab.active{color:#fff;background:var(--bg);border-top:1px solid var(--blue)}.editor-tab .tab-close{margin-left:auto;color:#888;font-size:15px}.editor-tab .tab-close:hover{color:#fff}.editor-toolbar{height:28px;display:flex;align-items:center;justify-content:space-between;padding:0 10px;background:var(--bg);color:var(--dim);font-size:11px;border-bottom:1px solid #292929}.editor-body{min-height:0;flex:1;display:flex;overflow:hidden;direction:ltr}.line-numbers{width:46px;flex:0 0 46px;overflow:hidden;padding:10px 8px 10px 0;text-align:right;color:#4e4e4e;background:var(--bg);font:13px/21px "JetBrains Mono","Cascadia Code",monospace;user-select:none}.code-editor{flex:1;resize:none;border:0;border-radius:0;padding:10px 13px;background:var(--bg);color:#d4d4d4;line-height:21px;font:13px/21px "JetBrains Mono","Cascadia Code",Consolas,monospace;tab-size:2;white-space:pre;overflow:auto;direction:ltr;text-align:left}.empty-editor{display:flex;align-items:center;justify-content:center;flex:1;color:var(--dim);font-size:14px}.preview-shell{height:100%;width:100%;display:flex;flex-direction:column;background:#fff}.preview-head{height:30px;display:flex;align-items:center;gap:7px;padding:0 11px;background:var(--panel);border-bottom:1px solid var(--border);color:var(--muted);font-size:12px}.preview-frame{border:0;flex:1;width:100%;background:#fff}.split-pane{display:flex;width:100%;height:100%}.split-pane>.editor-shell,.split-pane>.preview-shell{width:50%}.split-pane>.editor-shell{border-right:1px solid var(--border)}.terminal-panel{height:205px;flex:0 0 205px;background:var(--bg);border-top:1px solid var(--border);display:flex;flex-direction:column}.terminal-head{height:31px;display:flex;justify-content:space-between;align-items:center;padding:0 12px;color:#bbb;font:11px "JetBrains Mono",monospace;letter-spacing:1px}.terminal-head button{background:transparent;color:var(--muted);font-size:11px}.terminal-head button:hover{color:#fff}.terminal-output{flex:1;overflow:auto;padding:2px 12px;font:13px/20px "JetBrains Mono","Cascadia Code",monospace;white-space:pre-wrap;word-break:break-word}.terminal-line.info{color:#ccc}.terminal-line.success{color:var(--green)}.terminal-line.error{color:var(--red)}.terminal-line.warning{color:var(--yellow)}.terminal-line.system{color:var(--muted)}.terminal-input-row{height:31px;display:flex;align-items:center;gap:8px;padding:0 12px;border-top:1px solid var(--border);font:13px "JetBrains Mono",monospace}.terminal-input-row>span{color:var(--green)}.terminal-input-row input{flex:1;background:transparent;border:0;border-radius:0;font:13px "JetBrains Mono",monospace}.chat-shell{height:100%;display:flex;flex-direction:column}.chat-header{height:38px;flex:0 0 38px;display:flex;align-items:center;justify-content:space-between;padding:0 10px;border-bottom:1px solid var(--border)}.chat-title{display:flex;align-items:center;gap:7px;font-weight:600;color:#ccc}.chat-title .online{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block}.chat-actions{display:flex;gap:2px}.chat-settings{padding:9px;background:#1e1e1e;border-bottom:1px solid var(--border)}.chat-settings label{display:block;color:var(--muted);font-size:10px;margin-bottom:3px}.chat-settings input,.chat-settings select{width:100%;padding:6px 7px;font-size:12px;margin-bottom:7px;direction:ltr}.settings-buttons{display:flex;gap:6px}.settings-buttons button{flex:1;padding:6px;border-radius:4px;font-size:11px}.primary{background:var(--blue);color:#fff}.primary:hover{background:var(--blue2)}.secondary{background:#3c3c3c;color:#ccc}.conversation-list{max-height:185px;overflow:auto;padding:4px 0;background:#1e1e1e;border-bottom:1px solid var(--border)}.conversation-caption{padding:3px 10px;color:var(--muted);font-size:10px;text-transform:uppercase}.conversation-item{display:flex;align-items:center;gap:6px;margin:1px 4px;padding:6px 7px;border-radius:4px;color:#ccc;cursor:pointer}.conversation-item:hover,.conversation-item.active{background:var(--active);color:#fff}.conversation-item .conv-delete{margin-left:auto;color:#777;background:transparent;font-size:13px}.conversation-item .conv-delete:hover{color:var(--red)}.chat-messages{min-height:0;flex:1;overflow:auto;padding:10px}.message{margin-bottom:10px;animation:fadeIn .25s ease}.message-bubble{padding:9px 10px;border-radius:7px;line-height:1.65;font-size:12px;word-break:break-word}.message.user .message-bubble{margin-left:20px;background:var(--user);color:#fff}.message.assistant .message-bubble{margin-right:7px;background:var(--panel2);border:1px solid var(--border);color:#ccc}.message-meta{display:flex;align-items:center;gap:5px;margin-bottom:4px;color:var(--muted);font-size:10px}.message-content strong{color:#fff}.message-content code{background:#3c3c3c;color:#ce9178;padding:1px 4px;border-radius:3px;font:11px monospace}.message-content pre{direction:ltr;text-align:left;white-space:pre-wrap;background:#1e1e1e;border:1px solid var(--border);padding:8px;margin-top:6px;border-radius:4px;color:#d4d4d4;font:11px/1.5 monospace}.command-list{margin-top:6px;padding-top:6px;border-top:1px solid var(--border);font:10px monospace;color:var(--green)}.thinking{display:flex;align-items:center;gap:7px;color:var(--muted);padding:9px;background:var(--panel2);border:1px solid var(--border);border-radius:7px}.dots{display:flex;gap:3px}.dots i{width:6px;height:6px;background:var(--blue);border-radius:50%;animation:typing 1.3s infinite}.dots i:nth-child(2){animation-delay:.2s}.dots i:nth-child(3){animation-delay:.4s}.chat-input-area{padding:9px;border-top:1px solid var(--border)}.chat-input-row{display:flex;gap:6px}.chat-input-row textarea{flex:1;resize:none;padding:8px 9px;line-height:1.4;font-size:12px}.send-btn{width:38px;background:var(--blue);border-radius:6px;font-size:18px}.send-btn:hover{background:var(--blue2)}.chat-hint{display:flex;justify-content:space-between;margin-top:5px;color:var(--dim);font-size:9px}.chat-hint .simulation{color:var(--yellow)}.search-wrap{padding:11px}.search-wrap input{width:100%;padding:7px;font-size:12px}.search-results{overflow:auto;padding:0 7px}.search-result{padding:7px;border-bottom:1px solid var(--border);cursor:pointer;direction:ltr;text-align:left}.search-result:hover{background:var(--hover)}.search-result .file{color:#9cdcfe;font:11px monospace}.search-result .snippet{margin-top:3px;color:#aaa;font:11px/1.4 monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.empty-side{flex:1;display:flex;align-items:center;justify-content:center;padding:20px;text-align:center;color:var(--dim);font-size:12px}.statusbar{height:22px;flex:0 0 22px;display:flex;justify-content:space-between;align-items:center;padding:0 10px;background:#007acc;color:#fff;font-size:10px}.modal{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.35);display:flex;justify-content:center;align-items:flex-start;padding-top:80px}.command-box{width:min(600px,90vw);background:#252526;border:1px solid #555;box-shadow:0 8px 30px #0008;border-radius:6px;overflow:hidden}.command-title{display:flex;justify-content:space-between;align-items:center;padding:10px 13px;color:#ddd;font-size:13px}.command-title button{background:transparent;color:#aaa;font-size:20px}.command-box>input{display:block;width:calc(100% - 20px);margin:0 10px 8px;padding:9px;font-size:13px}.command-option{padding:8px 13px;color:#ccc;cursor:pointer}.command-option:hover{background:var(--blue);color:#fff}.toast-stack{position:fixed;right:14px;bottom:32px;z-index:30;display:flex;flex-direction:column;gap:7px}.toast{background:#333;border:1px solid #555;color:#eee;border-radius:5px;padding:9px 13px;box-shadow:0 3px 14px #0008;font-size:12px;animation:fadeIn .2s ease}.toast.success{border-color:var(--green)}.toast.error{border-color:var(--red)}@keyframes fadeIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}@keyframes typing{0%,100%{opacity:.3}50%{opacity:1}}@media(max-width:900px){.chat-panel{width:300px;flex-basis:300px}.side-panel{width:210px;flex-basis:210px}}@media(max-width:680px){.side-panel{width:190px;flex-basis:190px}.chat-panel{position:absolute;right:0;top:36px;bottom:22px;width:min(360px,calc(100vw - 48px));z-index:8;box-shadow:-8px 0 25px #0007}.title-actions .top-btn:first-child{display:none}.split-pane>.editor-shell{width:100%}.split-pane>.preview-shell{display:none}}
+
+/* Professional polish layer */
+:root{
+  --bg:#0b1020;--panel:#111827;--panel2:#182235;--hover:#202d43;--active:#263752;
+  --border:rgba(148,163,184,.16);--text:#e5edf8;--muted:#91a0b7;--dim:#61708a;
+  --blue:#6d7cff;--blue2:#8b5cf6;--green:#35d0a1;--yellow:#f2c66d;--red:#ff6b7a;
+  --user:#233b6b;--shadow:0 18px 55px rgba(0,0,0,.28)
+}
+*{scrollbar-width:thin;scrollbar-color:#33445f transparent}
+body{background:radial-gradient(circle at 12% -10%,rgba(109,124,255,.15),transparent 34%),radial-gradient(circle at 100% 0%,rgba(139,92,246,.12),transparent 28%),var(--bg);color:var(--text)}
+button,input,textarea,select{transition:border-color .18s ease,background .18s ease,box-shadow .18s ease,transform .18s ease}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid rgba(109,124,255,.8);outline-offset:2px}
+.titlebar{height:48px;flex-basis:48px;padding:0 16px;background:rgba(17,24,39,.88);border-bottom:1px solid var(--border);backdrop-filter:blur(18px)}
+.window-brand{gap:8px}.traffic{width:10px;height:10px;box-shadow:0 0 12px currentColor}.traffic.red{color:#ff6b7a}.traffic.yellow{color:#f2c66d}.traffic.green{color:#35d0a1}
+.brand-name{color:#dbe6f6;font:600 12px/1 "Cairo","Segoe UI",sans-serif;letter-spacing:.2px;margin-left:9px}.brand-name:after{content:'  •  محرر محلي';font-weight:400;color:var(--muted)}
+.title-actions{gap:8px}.top-btn{background:rgba(148,163,184,.1);border:1px solid transparent;color:#a9b6ca;font-size:11px;font-weight:700;padding:6px 10px;border-radius:7px}.top-btn:hover,.top-btn.active{background:rgba(109,124,255,.2);border-color:rgba(109,124,255,.45);color:#fff;transform:translateY(-1px)}
+.workspace{background:rgba(7,12,25,.3)}.activity-bar{width:58px;flex-basis:58px;background:rgba(13,20,36,.9);border-right:1px solid var(--border);padding-top:5px}.activity{width:58px;height:48px;font-size:23px;color:#71809b}.activity:hover,.activity.active{color:#fff;background:rgba(109,124,255,.1)}.activity.active:before{top:8px;bottom:8px;width:3px;background:linear-gradient(var(--blue),var(--blue2))}.activity-bottom .activity{height:44px}
+.side-panel{width:276px;flex-basis:276px;background:rgba(17,24,39,.82);border-right:1px solid var(--border);box-shadow:inset -1px 0 rgba(255,255,255,.015)}.panel-heading{height:46px;padding:0 15px;border-bottom:1px solid var(--border);color:#dbe6f6;font-size:10px;letter-spacing:1.3px}.panel-heading:before{content:'◈';color:var(--blue);font-size:10px;margin-right:6px}.panel-heading .heading-actions{gap:5px}.icon-btn{color:#8796af;font-size:16px;border-radius:6px}.icon-btn:hover{background:var(--hover);color:#fff;transform:translateY(-1px)}.tree-scroll{padding:8px 6px}.tree-row{height:30px;padding-right:9px;border-radius:6px;color:#bac7d9}.tree-row:hover{background:rgba(109,124,255,.1)}.tree-row.selected{background:linear-gradient(90deg,rgba(109,124,255,.2),rgba(109,124,255,.06));color:#fff;box-shadow:inset 2px 0 var(--blue)}.tree-row .node-icon{font-size:12px}.tree-row .node-name{font-size:12px}.new-item{padding:8px 10px;background:rgba(7,12,25,.2);border-bottom:1px solid var(--border)}.new-item input{padding:7px 9px;background:#0f1728;border-color:var(--border)}
+.center-column{background:rgba(7,12,25,.22)}.editor-preview-area{background:rgba(7,12,25,.22)}.editor-shell{background:#0d1424}.editor-tabs{height:40px;background:rgba(17,24,39,.92);border-bottom:1px solid var(--border)}.editor-tab{min-width:132px;height:40px;padding:0 12px;background:transparent;border-right:1px solid var(--border);color:#8290a7}.editor-tab.active{background:#0d1424;border-top:2px solid var(--blue);color:#f1f5fb}.editor-tab:hover{background:rgba(109,124,255,.08)}.editor-toolbar{height:34px;padding:0 14px;background:#0d1424;border-bottom:1px solid var(--border);color:#7888a1}.editor-path{font-size:11px}.editor-toolbar-actions{display:flex;align-items:center;gap:7px}.editor-toolbar-actions button{padding:3px 8px;border:1px solid var(--border);border-radius:5px;background:rgba(148,163,184,.07);color:#91a0b7;font-size:10px}.editor-toolbar-actions button:hover{background:rgba(109,124,255,.2);color:#fff;border-color:rgba(109,124,255,.45)}.editor-type{padding-left:4px;color:var(--blue)}.line-numbers{width:52px;flex-basis:52px;padding:13px 10px 13px 0;background:#0d1424;color:#43516a;font-size:12px;line-height:22px}.code-editor{padding:13px 16px;background:#0d1424;color:#d8e2f0;font-size:13px;line-height:22px;caret-color:#a5b4fc}.code-editor::selection{background:rgba(109,124,255,.3)}
+.preview-shell{background:#f8fafc}.preview-head{height:36px;padding:0 13px;background:#172238;border-bottom:1px solid var(--border);color:#a7b6cb}.preview-frame{background:#fff}
+.terminal-panel{height:220px;flex-basis:220px;background:#0a1120;border-top:1px solid var(--border)}.terminal-head{height:36px;padding:0 14px;color:#a9b6ca;border-bottom:1px solid rgba(148,163,184,.1)}.terminal-head span:before{content:'●';color:var(--green);font-size:8px;margin-right:7px}.terminal-output{padding:6px 14px;font-size:12px;line-height:21px}.terminal-input-row{height:36px;padding:0 14px;background:rgba(17,24,39,.7);border-top:1px solid var(--border)}.terminal-input-row>span{color:var(--green)}.terminal-input-row input{color:#d9e4f2}
+.chat-panel{width:380px;flex-basis:380px;background:rgba(17,24,39,.9);border-left:1px solid var(--border);box-shadow:var(--shadow)}.chat-header{height:48px;flex-basis:48px;padding:0 14px;background:rgba(24,34,53,.7);border-bottom:1px solid var(--border)}.chat-title{color:#edf3fb;font-size:12px}.chat-title .online{box-shadow:0 0 10px var(--green)}.chat-actions{gap:4px}.settings-visible{font-size:10px!important;padding:5px 7px}.chat-settings{padding:13px;background:#0e1728;border-bottom:1px solid var(--border)}.chat-settings label{color:#91a0b7;font-size:10px;margin-bottom:5px}.chat-settings input,.chat-settings select{padding:8px 9px;background:#111d31;border-color:var(--border);margin-bottom:9px}.chat-settings input:hover,.chat-settings select:hover{border-color:rgba(109,124,255,.45)}.chat-settings a{color:#9ba7ff;text-decoration:none}.chat-settings a:hover{text-decoration:underline}.settings-buttons{gap:7px}.settings-buttons button{padding:8px;border-radius:6px}.primary{background:linear-gradient(135deg,var(--blue),var(--blue2));box-shadow:0 5px 14px rgba(109,124,255,.22)}.primary:hover{filter:brightness(1.1);transform:translateY(-1px)}.secondary{background:rgba(148,163,184,.1);border:1px solid var(--border)}.conversation-list{max-height:205px;background:#0d1424;border-bottom:1px solid var(--border)}.conversation-item{padding:8px 9px}.chat-messages{padding:14px}.message-bubble{padding:11px 12px;border-radius:10px;line-height:1.75;font-size:12px;box-shadow:0 5px 18px rgba(0,0,0,.08)}.message.user .message-bubble{background:linear-gradient(135deg,#244477,#1b3157);border:1px solid rgba(120,161,255,.18)}.message.assistant .message-bubble{background:linear-gradient(135deg,#1a263a,#172235);border-color:rgba(148,163,184,.14)}.message-meta{margin-bottom:6px;color:#71809b}.message-content strong{color:#f1f5fb}.message-content pre{background:#0b1120;border-color:rgba(148,163,184,.14);padding:10px}.command-list{color:var(--green);background:rgba(53,208,161,.04);border-radius:5px;padding:7px;margin-top:8px}.chat-input-area{padding:12px 13px;background:#0e1728;border-top:1px solid var(--border)}.chat-input-row{gap:8px}.chat-input-row textarea{padding:10px;background:#111d31;border-color:var(--border)}.chat-input-row textarea::placeholder{color:#657590}.send-btn{width:42px;background:linear-gradient(135deg,var(--blue),var(--blue2));border-radius:8px;box-shadow:0 5px 14px rgba(109,124,255,.22)}.send-btn:hover{transform:translateY(-1px);filter:brightness(1.1)}.chat-hint{margin-top:7px}.chat-hint .simulation{color:var(--green)}
+.search-wrap{padding:14px}.search-wrap input{padding:9px 10px;background:#0f1728;border-color:var(--border)}.search-result{padding:9px;border-bottom-color:var(--border);border-radius:6px}.search-result:hover{background:rgba(109,124,255,.1)}.empty-side{color:#64748b;padding:28px 20px}.statusbar{height:26px;flex-basis:26px;padding:0 13px;background:linear-gradient(90deg,#4659c7,#5b3da6);font-size:10px}.modal{background:rgba(3,7,18,.65);backdrop-filter:blur(8px);padding-top:74px}.command-box{background:#121c2f;border:1px solid rgba(148,163,184,.22);box-shadow:0 20px 70px rgba(0,0,0,.5);border-radius:10px}.command-title{padding:13px 15px;color:#eef3fa}.command-box>input{padding:10px;background:#0d1627;border-color:var(--border)}.command-option{padding:10px 15px;color:#b7c5d9}.command-option:hover{background:linear-gradient(90deg,rgba(109,124,255,.26),rgba(109,124,255,.06))}.toast-stack{right:18px;bottom:40px}.toast{background:#172238;border-color:rgba(148,163,184,.2);box-shadow:0 10px 30px rgba(0,0,0,.35);border-radius:8px;padding:10px 14px}.toast.success{border-color:rgba(53,208,161,.55)}
+@media(max-width:1100px){.chat-panel{width:340px;flex-basis:340px}.side-panel{width:240px;flex-basis:240px}}
+@media(max-width:760px){.titlebar{padding:0 10px}.brand-name:after{display:none}.title-actions{gap:4px}.top-btn{padding:6px 7px;font-size:10px}.top-btn:nth-child(4),.top-btn:nth-child(5){display:none}.side-panel{width:220px;flex-basis:220px}.chat-panel{width:min(390px,calc(100vw - 58px));flex-basis:min(390px,calc(100vw - 58px))}.editor-toolbar{padding:0 9px}.editor-path{max-width:45%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
+@media(max-width:560px){.side-panel{position:absolute;left:58px;top:48px;bottom:26px;width:calc(100vw - 58px);z-index:9;box-shadow:var(--shadow)}.activity-bar{z-index:10}.title-actions .top-btn:nth-child(2){display:none}.editor-tab{min-width:115px}.terminal-panel{height:185px;flex-basis:185px}.chat-panel{top:48px;bottom:26px}.statusbar{font-size:9px}}
+.danger-btn{color:#ff9aa7!important}.danger-btn:hover{background:rgba(255,107,122,.14)!important;border-color:rgba(255,107,122,.42)!important;color:#ffd8dd!important}
+
+  </style>
+<script src="https://cdn.jsdelivr.net/npm/fflate@0.8.2/umd/index.js"></script></head>
+<body>
+  <div id="app" class="app-shell">
+    <header class="titlebar" dir="ltr">
+      <div class="window-brand"><span class="traffic red"></span><span class="traffic yellow"></span><span class="traffic green"></span><span class="brand-name">WebStudio<span id="title-file"></span></span></div>
+      <div class="title-actions">
+        <button class="top-btn" id="palette-btn" title="لوحة الأوامر Ctrl+Shift+P">⌘P</button>
+        <button class="top-btn" id="preview-btn" title="معاينة مباشرة">◉ معاينة</button>
+        <button class="top-btn" id="download-btn" title="تصدير جميع الملفات كملف ZIP">⇩ تصدير ZIP</button>
+        <button class="top-btn" id="backup-btn" title="حفظ نسخة احتياطية">◫ نسخة احتياطية</button>
+        <button class="top-btn danger-btn" id="reset-btn" title="إعادة ضبط المشروع">↺ إعادة ضبط</button>
+      </div>
+    </header>
+    <main class="workspace" dir="ltr">
+      <aside class="activity-bar">
+        <button class="activity active" data-panel="explorer" title="مستكشف الملفات"><span>▤</span></button>
+        <button class="activity" data-panel="search" title="بحث"><span>⌕</span></button>
+        <button class="activity" data-panel="chat" title="الشات الذكي"><span>◌</span></button>
+        <div class="activity-bottom">
+          <button class="activity" id="terminal-toggle" title="الطرفية"><span>⌘</span></button>
+          <button class="activity" id="chat-toggle" title="الشات"><span>▱</span></button>
+        </div>
+      </aside>
+      <aside class="side-panel" id="side-panel"></aside>
+      <section class="center-column">
+        <div class="editor-preview-area" id="editor-preview-area"></div>
+        <section class="terminal-panel hidden" id="terminal-panel">
+          <div class="terminal-head"><span>TERMINAL</span><button id="clear-terminal">مسح</button></div>
+          <div class="terminal-output" id="terminal-output"></div>
+          <div class="terminal-input-row" dir="ltr"><span>$</span><input id="terminal-input" placeholder="اكتب help للمساعدة" autocomplete="off"></div>
+        </section>
+      </section>
+      <aside class="chat-panel hidden" id="chat-panel"></aside>
+    </main>
+    <footer class="statusbar" dir="ltr"><span id="status-left">✓ جاهز</span><span id="status-right">UTF-8 &nbsp; | &nbsp; Local mode</span></footer>
+    <div class="modal hidden" id="command-modal"><div class="command-box"><div class="command-title">لوحة الأوامر <button id="close-command">×</button></div><input id="command-search" placeholder="اكتب أمراً..." autocomplete="off"><div id="command-list"></div></div></div>
+    <div class="toast-stack" id="toast-stack"></div>
+  </div>
+  <script id="embedded-app">
+(() => {
+  'use strict';
+
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+  const uid = () => `${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+  const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch]));
+  const pathParts = path => String(path || '').split('/').filter(Boolean);
+  const normalizePath = path => '/' + pathParts(path).join('/');
+
+  const starterFiles = {
+    '/index.html': `<!DOCTYPE html>\n<html lang="ar" dir="rtl">\n<head>\n  <meta charset="UTF-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1.0">\n  <title>مشروعي</title>\n  <link rel="stylesheet" href="style.css">\n</head>\n<body>\n  <div id="app">\n    <h1>مرحباً بالعالم! 🌍</h1>\n    <p>هذا مشروعي الأول</p>\n    <button id="btn">اضغط هنا</button>\n  </div>\n  <script src="script.js"><\/script>\n</body>\n</html>`,
+    '/style.css': `/* المشروع الرئيسي */\n* { margin: 0; padding: 0; box-sizing: border-box; }\nbody {\n  font-family: system-ui, sans-serif;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  min-height: 100vh; display: flex; align-items: center; justify-content: center; color: white;\n}\n#app { text-align: center; }\nh1 { font-size: 2.5rem; margin-bottom: 1rem; }\np { font-size: 1.2rem; opacity: .8; margin-bottom: 2rem; }\nbutton { padding: 12px 32px; border: 0; border-radius: 8px; background: rgba(255,255,255,.2); color: white; font-size: 1.1rem; cursor: pointer; transition: .3s; }\nbutton:hover { background: rgba(255,255,255,.3); transform: translateY(-2px); }`,
+    '/script.js': `// التطبيق الرئيسي\nconst btn = document.getElementById('btn');\nlet count = 0;\nbtn.addEventListener('click', () => {\n  count++;\n  btn.textContent = \`تم الضغط \${count} مرة\`;\n  btn.style.transform = 'scale(1.1)';\n  setTimeout(() => btn.style.transform = 'scale(1)', 200);\n});\nconsole.log('التطبيق جاهز! 🚀');`,
+    '/README.md': `# مشروعي 🚀\n\nمحرر WebStudio يعمل محلياً من المتصفح.\n\n- افتح index.html للمعاينة\n- عدّل الملفات من المحرر\n- كل التغييرات تُحفظ في هذا المتصفح تلقائياً`
+    , '/.webstudio/AGENT.md': `# WebStudio Agent Capabilities
+
+## Role
+Act as a careful coding agent inside the local WebStudio project. Read before editing, explain the plan, make the smallest safe change, then verify the result.
+
+## Project operations
+- Inspect the project tree and read any file before changing it.
+- Search filenames and file contents with SEARCH_PROJECT.
+- Search this capability file with SEARCH_CAPABILITIES whenever a task is unclear.
+- Use CHECK_PROJECT and CHECK_LINKS before and after substantial changes.
+- Open the changed file and report a concise change summary.
+
+## Safe edit operations
+- Use CREATE_FILE, WRITE_FILE, UPDATE_FILE for full-file changes.
+- Use REPLACE_IN_FILE for an exact old-text replacement; it must match exactly once.
+- Use REPLACE_LINE for a 1-based line replacement.
+- Use INSERT_AFTER to insert content after an exact anchor.
+- Every edit creates a local backup in the in-memory change history and is reversible in the current session.
+
+## Testing
+- Test the preview as a user: click buttons, submit forms, follow local links, and inspect visible results when browser automation is available.
+- Use CHECK_PROJECT, CHECK_LINKS, and the preview console errors as evidence.
+- Never claim a test passed without running it or clearly say it was static analysis only.
+
+## Boundaries
+- Control is limited to files, preview, and the internal WebStudio console.
+- Never run operating-system shell commands, sudo, package managers, delete commands outside the project, or access private device files.
+`
+  };
+
+  const welcome = 'مرحباً بك في WebStudio! 👋💻\n\nأنا مساعدك البرمجي بصلاحيات كاملة داخل مشروع المحرر. أستطيع إنشاء وتحديث وقراءة وفتح وحذف وإعادة تسمية الملفات والمجلدات، وكتابة الأكواد وتنفيذ تغييرات كبيرة أو صغيرة مباشرة.\n\nجرّب: `احذف script.js` أو `أعد تسمية style.css إلى main.css` أو `حدّث index.html`.\n\nبدون مفتاح Gemini سأعمل بوضع المحاكاة المحلي، ويمكنك إضافة المفتاح واختيار النموذج من الإعدادات.';
+
+  const initialState = () => ({
+    files: {...starterFiles}, folders: ['/src', '/src/components'], expanded: {'/src': true, '/src/components': false},
+    openFiles: ['/index.html'], activeFile: '/index.html', showPreview: false, showTerminal: false,
+    activeSidePanel: 'explorer', showChat: true, apiKey: 'worker-api', aiModel: 'llama-3.3-70b', apiEndpoint: 'https://ai-chat.jopa4kli.workers.dev/api/chat',
+    conversations: [{id: uid(), title: 'محادثة جديدة', messages: [{id: uid(), role: 'assistant', content: welcome, timestamp: Date.now()}]}],
+    activeConversation: null, terminal: [{id: uid(), type: 'system', text: 'WebStudio جاهز! اكتب "مساعدة" لعرض الأوامر المتاحة.'}]
+  });
+
+  let state;
+  try { state = {...initialState(), ...(JSON.parse(localStorage.getItem('webstudio-local') || '{}'))}; }
+  catch { state = initialState(); }
+  state.files = state.files && Object.keys(state.files).length ? state.files : {...starterFiles};
+  state.folders = Array.isArray(state.folders) ? state.folders : ['/src', '/src/components'];
+  state.openFiles = Array.isArray(state.openFiles) && state.openFiles.length ? state.openFiles : ['/index.html'];
+  state.conversations = Array.isArray(state.conversations) && state.conversations.length ? state.conversations : initialState().conversations;
+  state.terminal = Array.isArray(state.terminal) ? state.terminal : initialState().terminal;
+  if (!state.files['/.webstudio/AGENT.md']) state.files['/.webstudio/AGENT.md'] = starterFiles['/.webstudio/AGENT.md'];
+  if (!state.apiEndpoint) state.apiEndpoint = 'https://ai-chat.jopa4kli.workers.dev/api/chat';
+
+  const save = () => {
+    try { localStorage.setItem('webstudio-local', JSON.stringify(state)); } catch {}
+  };
+  const fileName = path => pathParts(path).pop() || 'root';
+  const ext = path => (fileName(path).split('.').pop() || '').toLowerCase();
+  const parentPath = path => { const p = pathParts(path); p.pop(); return p.length ? '/' + p.join('/') : '/'; };
+  const hasPath = path => !!state.files[normalizePath(path)] || state.folders.includes(normalizePath(path));
+  const allPaths = () => [...state.folders, ...Object.keys(state.files)].sort((a,b) => a.localeCompare(b, 'ar'));
+
+  function fileIcon(path) {
+    const e = ext(path);
+    const map = {html:['‹›','file-html'], css:['#','file-css'], js:['JS','file-js'], jsx:['JS','file-js'], ts:['TS','file-js'], tsx:['TS','file-js'], json:['{}','file-json'], md:['M','file-md'], png:['▧','file-img'], jpg:['▧','file-img'], jpeg:['▧','file-img'], svg:['◇','file-img']};
+    const item = map[e] || ['·','file-default'];
+    return `<span class="node-icon ${item[1]}">${item[0]}</span>`;
+  }
+
+  function visibleTree() {
+    const children = {};
+    allPaths().forEach(path => { const parent = parentPath(path); (children[parent] ||= []).push(path); });
+    Object.values(children).forEach(list => list.sort((a,b) => { const af = state.files[a] !== undefined, bf = state.files[b] !== undefined; return af === bf ? a.localeCompare(b,'ar') : (af ? 1 : -1); }));
+    const render = (parent, depth = 0) => (children[parent] || []).map(path => {
+      const isFolder = state.folders.includes(path); const opened = !!state.expanded[path];
+      const row = `<div class="tree-row ${state.activeFile === path ? 'selected' : ''}" data-path="${esc(path)}" data-kind="${isFolder ? 'folder' : 'file'}" style="padding-left:${8 + depth * 16}px">${isFolder ? `<span class="caret">${opened ? '▾' : '▸'}</span><span class="node-icon folder-icon">▰</span>` : '<span class="caret"></span>'}${isFolder ? '' : fileIcon(path)}<span class="node-name">${esc(fileName(path))}</span></div>`;
+      return row + (isFolder && opened ? render(path, depth + 1) : '');
+    }).join('');
+    return render('/');
+  }
+
+  function renderExplorer() {
+    return `<div class="panel-shell"><div class="panel-heading"><span>المستكشف</span><div class="heading-actions"><button class="icon-btn" id="new-file" title="ملف جديد">＋</button><button class="icon-btn" id="new-folder" title="مجلد جديد">▱</button></div></div><div class="tree-scroll" id="tree-scroll">${visibleTree() || '<div class="empty-side">لا توجد ملفات</div>'}</div></div>`;
+  }
+
+  function renderSearch() {
+    return `<div class="panel-shell"><div class="panel-heading">بحث في الملفات</div><div class="search-wrap"><input id="file-search" placeholder="بحث في الملفات..." autocomplete="off"></div><div class="search-results" id="search-results"><div class="empty-side">اكتب للبحث داخل الملفات</div></div></div>`;
+  }
+
+  function renderSidePanel() {
+    const side = $('#side-panel');
+    if (state.activeSidePanel === 'none' || state.activeSidePanel === 'chat') { side.innerHTML = ''; side.style.display = 'none'; return; }
+    side.style.display = ''; side.innerHTML = state.activeSidePanel === 'search' ? renderSearch() : renderExplorer();
+    bindSideEvents();
+  }
+
+  function renderEditor() {
+    const paths = state.openFiles.filter(p => state.files[p] !== undefined);
+    const active = state.files[state.activeFile] !== undefined ? state.activeFile : (paths[0] || null);
+    if (!active) return `<div class="empty-editor">افتح ملفاً من المستكشف للبدء</div>`;
+    const numbers = String(state.files[active] || '').split('\n').map((_, i) => i + 1).join('\n');
+    return `<div class="editor-shell"><div class="editor-tabs">${paths.map(path => `<div class="editor-tab ${path === active ? 'active' : ''}" data-tab="${esc(path)}">${fileIcon(path)}<span>${esc(fileName(path))}</span><button class="tab-close" data-close="${esc(path)}">×</button></div>`).join('')}</div><div class="editor-toolbar"><span dir="ltr" class="editor-path">${esc(active)}</span><span class="editor-toolbar-actions"><button id="copy-file" title="نسخ محتوى الملف">نسخ</button><button id="download-file" title="تنزيل الملف الحالي">تنزيل</button><span class="editor-type">${ext(active).toUpperCase() || 'TEXT'}</span></span></div><div class="editor-body"><pre class="line-numbers" id="line-numbers">${numbers}</pre><textarea class="code-editor" id="code-editor" spellcheck="false" aria-label="محرر الكود">${esc(state.files[active])}</textarea></div></div>`;
+  }
+
+  function buildPreview() {
+    let html = state.files['/index.html'];
+    if (!html) return `<html><body style="font-family:sans-serif;display:grid;place-items:center;height:100vh"><h2>لا يوجد ملف index.html</h2></body></html>`;
+    html = html.replace(/<link([^>]+href=["']([^"']+\.css)["'][^>]*)>/gi, (m, attrs, href) => { const p = normalizePath(href.replace(/^\.\//,'')); return state.files[p] !== undefined ? `<style>/* ${esc(href)} */\n${state.files[p]}</style>` : ''; });
+    html = html.replace(/<script([^>]+src=["']([^"']+\.js)["'][^>]*)><\/script>/gi, (m, attrs, src) => { const p = normalizePath(src.replace(/^\.\//,'')); return state.files[p] !== undefined ? `<script>/* ${esc(src)} */\n${state.files[p]}<\/script>` : ''; });
+    const monitor = `<script>(function(){
+      function report(type, value){ try { parent.postMessage({source:"webstudio-preview", type:type, message:String(value)}, "*"); } catch(e) {} }
+      window.addEventListener("error", function(e){ report("error", (e.message || "Runtime error") + " @ " + (e.filename || "preview") + ":" + (e.lineno || "?")); });
+      window.addEventListener("unhandledrejection", function(e){ report("error", "Unhandled promise rejection: " + (e.reason && e.reason.message || e.reason)); });
+      var originalError = console.error; console.error = function(){ report("error", Array.prototype.slice.call(arguments).join(" ")); originalError.apply(console, arguments); };
+    })();<\/script>`;
+    return html.replace(/<\/body>/i, monitor + "<\/body>");
+  }
+
+  window.addEventListener("message", event => {
+    if (!event.data || event.data.source !== "webstudio-preview") return;
+    addTerminal(event.data.message, event.data.type === "error" ? "error" : "info");
+    toast("تم تسجيل خطأ من المعاينة في الكونسول", "error");
+  });
+
+  function renderCenter() {
+    const area = $('#editor-preview-area');
+    if (state.showPreview) area.innerHTML = `<div class="split-pane">${renderEditor()}<div class="preview-shell"><div class="preview-head"><span>◉</span> معاينة مباشرة <span style="margin-left:auto;color:#6a6a6a">srcDoc</span></div><iframe class="preview-frame" sandbox="allow-scripts" title="معاينة مباشرة"></iframe></div></div>`;
+    else area.innerHTML = renderEditor();
+    bindEditorEvents();
+    if (state.showPreview) { const frame = $('.preview-frame'); if (frame) frame.srcdoc = buildPreview(); }
+  }
+
+  function renderTerminal() {
+    $('#terminal-panel').classList.toggle('hidden', !state.showTerminal);
+    $('#terminal-output').innerHTML = state.terminal.map(line => `<div class="terminal-line ${line.type}">${esc(line.text)}</div>`).join('');
+    const out = $('#terminal-output'); out.scrollTop = out.scrollHeight;
+  }
+
+  function activeConversation() { return state.conversations.find(c => c.id === state.activeConversation) || state.conversations[0]; }
+  function formatMessage(text) {
+    let safe = esc(text);
+    safe = safe.replace(/```(\w*)\n?([\s\S]*?)```/g, (_m, lang, code) => `<pre>${esc(code.trim())}</pre>`);
+    safe = safe.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\n/g, '<br>');
+    return safe;
+  }
+  function renderChat() {
+    const conv = activeConversation(); const messages = conv ? conv.messages : [];
+    const conversationList = `<div class="conversation-list"><div class="conversation-caption">المحادثات (${state.conversations.length})</div>${state.conversations.map(c => `<div class="conversation-item ${c.id === state.activeConversation ? 'active' : ''}" data-conversation="${c.id}"><span>◌</span><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(c.title)}</span><button class="conv-delete" data-delete-conversation="${c.id}">×</button></div>`).join('')}</div>`;
+    const messagesHtml = messages.map(m => `<div class="message ${m.role}"><div class="message-bubble"><div class="message-meta"><span>${m.role === 'user' ? '👤' : '🤖'}</span><span>${m.role === 'user' ? 'أنت' : 'المساعد'}</span><span>${new Date(m.timestamp).toLocaleTimeString('ar-EG',{hour:'2-digit',minute:'2-digit'})}</span></div><div class="message-content">${formatMessage(m.content)}</div>${m.commands?.length ? `<div class="command-list">⚡ أوامر نُفذت:<br>${m.commands.map(c => esc(c.type === 'DELETE' ? '- حذف ' + c.path : c.type === 'RENAME' ? '↔ إعادة تسمية ' + c.path + ' → ' + c.newName : c.type === 'OPEN_FILE' ? '▸ فتح ' + c.path : '+ ' + c.path)).join('<br>')}</div>` : ''}</div></div>`).join('');
+    return `<div class="chat-shell"><div class="chat-header"><div class="chat-title"><span>🤖</span><span>الشات الذكي</span>${state.apiKey ? '<span class="online"></span>' : ''}</div><div class="chat-actions"><button class="icon-btn" id="conversation-toggle" title="المحادثات">☰</button><button class="icon-btn" id="new-conversation" title="محادثة جديدة">＋</button><button class="icon-btn settings-visible" id="chat-settings-toggle" title="إعدادات الشات">⚙ الإعدادات</button></div></div><div id="chat-settings" class="chat-settings hidden"><label>رابط Worker API</label><input id="api-key" type="text" value="${esc(state.apiEndpoint || 'https://ai-chat.jopa4kli.workers.dev/api/chat')}" dir="ltr"><label>النموذج</label><input id="ai-model-custom" type="text" value="llama-3.3-70b" readonly dir="ltr"><div class="settings-buttons"><button class="primary" id="save-settings">حفظ</button><button class="secondary" id="cancel-settings">إلغاء</button></div></div><div id="conversation-list-wrap" class="hidden">${conversationList}</div><div class="chat-messages" id="chat-messages">${messagesHtml || '<div class="empty-side">ابدأ محادثة جديدة</div>'}</div><div class="chat-input-area"><div class="chat-input-row"><textarea id="chat-input" rows="2" placeholder="اكتب رسالتك..."></textarea><button class="send-btn" id="send-chat">➜</button></div><div class="chat-hint"><span>Enter للإرسال • Shift+Enter لسطر جديد</span><span class="simulation">${state.apiKey ? 'Worker API متصل' : 'وضع المحاكاة'}</span></div></div></div>`;
+  }
+
+  function renderChatPanel() {
+    const panel = $('#chat-panel');
+    panel.classList.toggle('hidden', !state.showChat);
+    if (state.showChat) { panel.innerHTML = renderChat(); bindChatEvents(); }
+  }
+
+  function renderAll() {
+    $('#title-file').textContent = state.activeFile ? ` — ${fileName(state.activeFile)}` : '';
+    $('#preview-btn').classList.toggle('active', state.showPreview);
+    renderSidePanel(); renderCenter(); renderTerminal(); renderChatPanel();
+    $$('.activity').forEach(btn => btn.classList.toggle('active', btn.dataset.panel === state.activeSidePanel || (btn.id === 'terminal-toggle' && state.showTerminal) || (btn.id === 'chat-toggle' && state.showChat)));
+    $('#status-left').textContent = state.activeFile ? `✓ ${fileName(state.activeFile)} محفوظ محلياً` : '✓ جاهز';
+    $('#status-right').textContent = `UTF-8  •  Local  •  ${state.apiKey ? 'Worker API متصل' : 'محاكاة محلية'}`;
+    save();
+  }
+
+  function addTerminal(text, type = 'info') { state.terminal.push({id:uid(), text, type}); state.terminal = state.terminal.slice(-120); save(); renderTerminal(); }
+  function setActive(path) { if (state.files[path] === undefined) return; if (!state.openFiles.includes(path)) state.openFiles.push(path); state.activeFile = path; renderAll(); }
+
+  function createFile(path, content = '') { path = normalizePath(path); if (!path || path === '/') return; state.files[path] = content; const pp = pathParts(path); for (let i=1;i<pp.length;i++) { const folder='/' + pp.slice(0,i).join('/'); if (!state.folders.includes(folder)) state.folders.push(folder); } setActive(path); addTerminal(`تم إنشاء ملف: ${path}`, 'success'); }
+  function createFolder(path) { path = normalizePath(path); if (!path || path === '/') return; if (!state.folders.includes(path)) state.folders.push(path); state.expanded[path] = true; renderAll(); addTerminal(`تم إنشاء مجلد: ${path}`, 'success'); }
+  function removePath(path) { path = normalizePath(path); const removeFiles = Object.keys(state.files).filter(p => p === path || p.startsWith(path + '/')); const removeFolders = state.folders.filter(p => p === path || p.startsWith(path + '/')); removeFiles.forEach(p => delete state.files[p]); state.folders = state.folders.filter(p => !removeFolders.includes(p)); state.openFiles = state.openFiles.filter(p => !removeFiles.includes(p)); if (removeFiles.includes(state.activeFile)) state.activeFile = state.openFiles[0] || null; renderAll(); addTerminal(`تم حذف: ${path}`, 'warning'); }
+  function renamePath(path, newName) { const clean = String(newName || '').trim().replace(/[\\/]/g,''); if (!clean) return; const target = parentPath(path) === '/' ? '/' + clean : parentPath(path) + '/' + clean; if (hasPath(target)) return toast('الاسم مستخدم بالفعل', 'error'); if (state.files[path] !== undefined) { state.files[target] = state.files[path]; delete state.files[path]; } else { state.folders = state.folders.map(p => p === path || p.startsWith(path + '/') ? target + p.slice(path.length) : p); } state.openFiles = state.openFiles.map(p => p === path ? target : p); if (state.activeFile === path) state.activeFile = target; renderAll(); addTerminal(`تمت إعادة التسمية: ${path} → ${target}`, 'info'); }
+
+  function bindSideEvents() {
+    $('#new-file')?.addEventListener('click', () => { const name = prompt('اسم الملف (مثال: app.js):'); if (name) createFile(name, ''); });
+    $('#new-folder')?.addEventListener('click', () => { const name = prompt('اسم المجلد:'); if (name) createFolder(name); });
+    $$('.tree-row').forEach(row => {
+      row.addEventListener('click', () => { const path = row.dataset.path; if (row.dataset.kind === 'folder') { state.expanded[path] = !state.expanded[path]; renderAll(); } else setActive(path); });
+      row.addEventListener('contextmenu', e => { e.preventDefault(); const path = row.dataset.path; const action = prompt(`إجراء على ${fileName(path)}:\nاكتب: rename لإعادة التسمية أو delete للحذف`); if (action === 'rename') { const n = prompt('الاسم الجديد:', fileName(path)); if (n) renamePath(path,n); } else if (action === 'delete' && confirm('حذف هذا العنصر؟')) removePath(path); });
+    });
+    const search = $('#file-search'); search?.addEventListener('input', () => {
+      const q = search.value.toLowerCase(); const result = $('#search-results'); if (!q) { result.innerHTML = '<div class="empty-side">اكتب للبحث داخل الملفات</div>'; return; }
+      const matches = Object.entries(state.files).filter(([p,c]) => p.toLowerCase().includes(q) || c.toLowerCase().includes(q));
+      result.innerHTML = matches.length ? matches.map(([p,c]) => { const line = c.split('\n').find(x => x.toLowerCase().includes(q)) || ''; return `<div class="search-result" data-result="${esc(p)}"><div class="file">${esc(p)}</div><div class="snippet">${esc(line)}</div></div>`; }).join('') : '<div class="empty-side">لا توجد نتائج</div>';
+      $$('.search-result').forEach(el => el.addEventListener('click', () => setActive(el.dataset.result)));
+    });
+  }
+
+  function bindEditorEvents() {
+    $$('.editor-tab').forEach(tab => tab.addEventListener('click', e => { if (e.target.closest('[data-close]')) return; setActive(tab.dataset.tab); }));
+    $$('[data-close]').forEach(btn => btn.addEventListener('click', e => { e.stopPropagation(); const path = btn.dataset.close; state.openFiles = state.openFiles.filter(p => p !== path); if (state.activeFile === path) state.activeFile = state.openFiles[0] || null; renderAll(); }));
+    const editor = $('#code-editor'); if (!editor) return;
+    $('#copy-file')?.addEventListener('click', () => copyToClipboard(state.files[state.activeFile] || ''));
+    $('#download-file')?.addEventListener('click', () => { downloadText(fileName(state.activeFile), state.files[state.activeFile] || ''); toast('تم تنزيل الملف', 'success'); });
+    editor.addEventListener('input', () => { state.files[state.activeFile] = editor.value; $('#line-numbers').textContent = editor.value.split('\n').map((_,i)=>i+1).join('\n'); $('#status-left').textContent = `✓ ${fileName(state.activeFile)} محفوظ محلياً`; save(); if (state.showPreview) { const frame = $('.preview-frame'); if (frame) frame.srcdoc = buildPreview(); } });
+    editor.addEventListener('scroll', () => { const lines = $('#line-numbers'); if (lines) lines.scrollTop = editor.scrollTop; });
+    editor.addEventListener('keydown', e => { if (e.key === 'Tab') { e.preventDefault(); const start = editor.selectionStart; editor.value = editor.value.slice(0,start) + '  ' + editor.value.slice(editor.selectionEnd); editor.selectionStart = editor.selectionEnd = start + 2; editor.dispatchEvent(new Event('input')); } });
+  }
+
+  function bindChatEvents() {
+    $('#conversation-toggle')?.addEventListener('click', () => $('#conversation-list-wrap').classList.toggle('hidden'));
+    $('#new-conversation')?.addEventListener('click', () => { const id=uid(); state.conversations.unshift({id,title:'محادثة جديدة',messages:[{id:uid(),role:'assistant',content:'مرحباً! كيف يمكنني مساعدتك؟ 🚀',timestamp:Date.now()}]}); state.activeConversation=id; renderChatPanel(); save(); });
+    $('#chat-settings-toggle')?.addEventListener('click', () => $('#chat-settings').classList.toggle('hidden'));
+    $('#cancel-settings')?.addEventListener('click', () => renderChatPanel());
+    $('#save-settings')?.addEventListener('click', () => { state.apiEndpoint = $('#api-key').value.trim() || 'https://ai-chat.jopa4kli.workers.dev/api/chat'; state.apiKey = 'worker-api'; state.aiModel = 'llama-3.3-70b'; renderChatPanel(); save(); toast('تم حفظ إعدادات Worker API', 'success'); });
+    const customModel = $('#ai-model-custom'); if (customModel) customModel.value = 'llama-3.3-70b';
+    $$('[data-conversation]').forEach(el => el.addEventListener('click', () => { state.activeConversation = el.dataset.conversation; renderChatPanel(); save(); }));
+    $$('[data-delete-conversation]').forEach(el => el.addEventListener('click', e => { e.stopPropagation(); state.conversations = state.conversations.filter(c => c.id !== el.dataset.deleteConversation); state.activeConversation = state.conversations[0]?.id || null; renderChatPanel(); save(); }));
+    const input = $('#chat-input'); const send = () => { const value=input.value.trim(); if (!value) return; input.value=''; sendChat(value); };
+    $('#send-chat')?.addEventListener('click', send); input?.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); } });
+    const box = $('#chat-messages'); if (box) box.scrollTop = box.scrollHeight;
+  }
+
+  function getConversation() { if (!state.activeConversation || !state.conversations.some(c=>c.id===state.activeConversation)) state.activeConversation = state.conversations[0]?.id || null; return activeConversation(); }
+  function parseCommands(text) { const commands=[]; let clean=text; let match; const fileRe=/\[(CREATE_FILE|WRITE_FILE|UPDATE_FILE):([^\]]+)\]([\s\S]*?)\[\/(?:CREATE_FILE|WRITE_FILE|UPDATE_FILE)\]/g; while ((match=fileRe.exec(text))) { commands.push({type:match[1],path:normalizePath(match[2]),content:match[3].trim()}); clean=clean.replace(match[0],''); } const folderRe=/\[(CREATE_FOLDER|MKDIR):([^\]]+)\]/g; while ((match=folderRe.exec(text))) { commands.push({type:'CREATE_FOLDER',path:normalizePath(match[2])}); clean=clean.replace(match[0],''); } const deleteRe=/\[(DELETE|REMOVE):([^\]]+)\]/g; while ((match=deleteRe.exec(text))) { commands.push({type:'DELETE',path:normalizePath(match[2])}); clean=clean.replace(match[0],''); } const renameRe=/\[RENAME:([^\]]+)\]([\s\S]*?)\[\/RENAME\]/g; while ((match=renameRe.exec(text))) { commands.push({type:'RENAME',path:normalizePath(match[1]),newName:match[2].trim()}); clean=clean.replace(match[0],''); } const openRe=/\[OPEN_FILE:([^\]]+)\]/g; while ((match=openRe.exec(text))) { commands.push({type:'OPEN_FILE',path:normalizePath(match[1])}); clean=clean.replace(match[0],''); } const agentRe=/\[(INSPECT_PROJECT|CHECK_PROJECT|CHECK_LINKS|READ_PROJECT|READ_FILE):?([^\]]*)\]/g; while ((match=agentRe.exec(text))) { commands.push({type:match[1],path:match[2].trim()}); clean=clean.replace(match[0],''); } const searchCapRe=/\[SEARCH_CAPABILITIES:?([^\]]*)\]/g; while ((match=searchCapRe.exec(text))) { commands.push({type:'SEARCH_CAPABILITIES',query:match[1].trim()}); clean=clean.replace(match[0],''); } const searchProjectRe=/\[SEARCH_PROJECT:([^\]]+)\]/g; while ((match=searchProjectRe.exec(text))) { commands.push({type:'SEARCH_PROJECT',query:match[1].trim()}); clean=clean.replace(match[0],''); } const replaceExactRe=/\[REPLACE_IN_FILE:([^\]]+)\]([\s\S]*?)\[\/OLD\]([\s\S]*?)\[\/NEW\]/g; while ((match=replaceExactRe.exec(text))) { commands.push({type:'REPLACE_IN_FILE',path:match[1].trim(),oldText:match[2],newText:match[3]}); clean=clean.replace(match[0],''); } const replaceLineRe=/\[REPLACE_LINE:([^:]+):(\d+)\]([\s\S]*?)\[\/REPLACE_LINE\]/g; while ((match=replaceLineRe.exec(text))) { commands.push({type:'REPLACE_LINE',path:match[1].trim(),lineNumber:match[2],newText:match[3]}); clean=clean.replace(match[0],''); } const insertAfterRe=/\[INSERT_AFTER:([^\]]+)\]([\s\S]*?)\[\/ANCHOR\]([\s\S]*?)\[\/CONTENT\]/g; while ((match=insertAfterRe.exec(text))) { commands.push({type:'INSERT_AFTER',path:match[1].trim(),anchor:match[2],content:match[3]}); clean=clean.replace(match[0],''); } const terminalRe=/\[TERMINAL:([^\]]+)\]/g; while ((match=terminalRe.exec(text))) { commands.push({type:'TERMINAL',command:match[1].trim()}); clean=clean.replace(match[0],''); } return {text:clean.trim(),commands}; }
+  function projectTree() { return allPaths().join('\n'); }
+  function localReply(message) {
+    const m=message.trim(), lower=m.toLowerCase();
+    const fileMatch=m.match(/(?:أنشئ|اعمل|create|creating)\s+(?:ملف\s+|file\s+)?([^\s]+\.(?:html|css|js|json|md|txt|jsx|tsx|ts|py))/i);
+    if (fileMatch) { const name=fileMatch[1]; const e=ext(name); const templates={html:`<!DOCTYPE html>\n<html lang="ar" dir="rtl">\n<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>${name}</title></head>\n<body>\n  <h1>مرحباً!</h1>\n</body>\n</html>`,css:`/* ${name} */\n* { box-sizing: border-box; }\nbody { font-family: system-ui, sans-serif; }`,js:`// ${name}\nconsole.log('Hello from ${name}');`,json:`{\n  "name": "my-project",\n  "version": "1.0.0"\n}`,md:`# مشروع جديد\n\nاكتب وصف المشروع هنا.`}; return `تم إنشاء الملف **${name}** بنجاح!\n\n[CREATE_FILE:${name}]${templates[e] || `// ${name}`}[/CREATE_FILE]`; }
+    const folderMatch=m.match(/(?:أنشئ|اعمل|create)\s+(?:مجلد\s+|folder\s+)([^\s]+)/i); if(folderMatch) return `تم إنشاء المجلد **${folderMatch[1]}** بنجاح!\n\n[CREATE_FOLDER:${folderMatch[1]}]`;
+    if (/^(مرحبا|أهلا|هلا|السلام|سلام|hi|hello|hey)/i.test(lower)) return 'مرحباً بك! 👋\n\nأنا مساعدك البرمجي المحلي. أستطيع إنشاء الملفات والمجلدات، شرح المفاهيم، وعرض هيكل المشروع. كيف أساعدك؟';
+    const deleteMatch=m.match(/(?:احذف|امسح|delete|remove)\s+(?:(?:ال)?ملف|(?:ال)?مجلد|file|folder)?\s*([^\s]+)/i); if (deleteMatch) return `تم حذف **${deleteMatch[1]}** من المحرر.\n\n[DELETE:${normalizePath(deleteMatch[1])}]`;
+    const renameMatch=m.match(/(?:أعد\s+تسمية|غير\s+اسم|rename)\s+([^\s]+)\s+(?:إلى|الى|to)\s+([^\s]+)/i); if (renameMatch) return `تمت إعادة تسمية **${renameMatch[1]}** إلى **${renameMatch[2]}**.\n\n[RENAME:${normalizePath(renameMatch[1])}]${renameMatch[2]}[/RENAME]`;
+    const openMatch=m.match(/(?:افتح|open)\s+(?:الملف\s+|file\s+)?([^\s]+)/i); if (openMatch) return `سأفتح الملف **${openMatch[1]}** لك.\n\n[OPEN_FILE:${normalizePath(openMatch[1])}]`;
+    if (/^(مساعدة|help|أوامر|commands)/i.test(lower)) return '📋 **صلاحياتي داخل المحرر:**\n\n• إنشاء أو تحديث ملف: `أنشئ ملف app.js`\n• إنشاء مجلد: `أنشئ مجلد components`\n• حذف ملف أو مجلد: `احذف ملف app.js`\n• إعادة تسمية: `أعد تسمية app.js إلى main.js`\n• فتح ملف وقراءة المشروع: `افتح style.css` أو `اعرض الملفات`\n• فحص المشروع والروابط: `[CHECK_PROJECT]` و`[CHECK_LINKS]`\n• قراءة مشروع أو ملف: `[INSPECT_PROJECT]` و`[READ_FILE:/index.html]`\n• كتابة وتعديل الأكواد وشرحها\n\nأتحكم في مشروع WebStudio الافتراضي فقط، وليس في ملفات نظام جهازك.';
+    if (/اعرض\s*(?:ال)?ملفات|list\s*files|اعرض\s*(?:ال)?مشروع/i.test(lower)) return `📂 **هيكل المشروع:**\n\n\`\`\`\n${projectTree()}\n\`\`\``;
+    if (/اشرح|explain|ما هو|what is/i.test(lower)) return 'يسعدني الشرح. اكتب اسم المفهوم بشكل أوضح، مثل: **اشرح Promise في JavaScript**.\n\nPromise يمثل نتيجة عملية غير متزامنة قد تنجح أو تفشل، ويمكن التعامل معها باستخدام `then` و`catch` أو `async/await`.';
+    if (/زر|button/i.test(lower) && /اكتب|كود|write|code|اعمل/i.test(lower)) return 'إليك مثالاً سريعاً لزر تفاعلي:\n\n```html\n<button id="hello">اضغط هنا</button>\n<script>\ndocument.querySelector("#hello").onclick = () => alert("مرحباً!");\n<\/script>\n```';
+    return 'شكراً لرسالتك! 🤔\n\nيمكنني مساعدتك في إنشاء الملفات والمجلدات، كتابة أمثلة JavaScript وHTML وCSS، شرح المفاهيم، أو استعراض ملفات المشروع. اكتب `مساعدة` لرؤية أمثلة الطلبات.';
+  }
+  async function callApi(messages) {
+    const endpoint = state.apiEndpoint || 'https://ai-chat.jopa4kli.workers.dev/api/chat';
+    const activeContent = state.activeFile && state.files[state.activeFile]
+      ? state.files[state.activeFile].slice(0, 12000)
+      : '(لا يوجد ملف نشط)';
+    const terminalContext = (state.terminal || []).slice(-60).map(item => '[' + item.type + '] ' + item.text).join('\n') || '(لا توجد رسائل كونسول)';
+    const editorContext = `حالة محرر WebStudio الحالية:\nالملف النشط: ${state.activeFile || '(لا يوجد)'}\nكل الملفات والمجلدات:\n${projectTree()}\nمحتوى الملف النشط:\n${activeContent}\n\nآخر أخطاء ورسائل الكونسول داخل المحرر:\n${terminalContext}`;
+    const systemText = `أنت مساعد برمجي داخل محرر WebStudio المحلي. ساعد المستخدم في إنشاء وتعديل ملفات المشروع فقط. عند طلب تغيير ملفات، أرسل أوامر [CREATE_FILE:path]content[/CREATE_FILE] أو [WRITE_FILE:path]content[/WRITE_FILE] أو [UPDATE_FILE:path]content[/UPDATE_FILE] أو [CREATE_FOLDER:path] أو [DELETE:path] أو [RENAME:old-path]new-name[/RENAME] أو [OPEN_FILE:path] أو [TERMINAL:help]. وللتصرف كوكيل استخدم [INSPECT_PROJECT] لقراءة الهيكل، [READ_FILE:path] لقراءة ملف، [CHECK_PROJECT] لفحص الأخطاء، [CHECK_LINKS] لفحص الموارد. ابحث داخل المشروع بـ[SEARCH_PROJECT:query] وابحث في قدراتك بـ[SEARCH_CAPABILITIES:query]. للتعديل الدقيق استخدم [REPLACE_IN_FILE:path]النص القديم[/OLD]النص الجديد[/NEW] أو [REPLACE_LINE:path:رقم_السطر]النص الجديد[/REPLACE_LINE] أو [INSERT_AFTER:path]النص المرساة[/ANCHOR]المحتوى[/CONTENT]، ثم نفذ الإصلاحات بأوامر الملفات. أوامر الكونسول آمنة وداخل المحرر فقط. اشرح النتيجة بالعربية. لا تنفذ أوامر نظام التشغيل أو shell خارج WebStudio.
+
+${editorContext}`;
+    const apiMessages = [
+      { role: 'user', content: systemText },
+      ...messages.map(message => ({ role: message.role, content: message.content }))
+    ];
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: apiMessages })
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.error || `Worker API Error ${response.status}`);
+    return data.response || 'لم يصل رد من Worker API.';
+  }
+  async function sendChat(text) { const conv=getConversation(); if(!conv) return; conv.messages.push({id:uid(),role:'user',content:text,timestamp:Date.now()}); if(conv.title==='محادثة جديدة') conv.title=text.slice(0,30); renderChatPanel(); save(); const placeholder={id:uid(),role:'assistant',content:'',timestamp:Date.now(),loading:true}; conv.messages.push(placeholder); renderChatPanel(); await new Promise(r=>setTimeout(r,650)); try { const raw=await callApi(conv.messages.filter(m=>!m.loading).map(m=>({role:m.role,content:m.content}))); const result=parseCommands(raw); Object.assign(placeholder,{content:result.text,commands:result.commands,loading:false}); result.commands.forEach(c=>{ if(c.type==='CREATE_FILE'||c.type==='WRITE_FILE'||c.type==='UPDATE_FILE') createFile(c.path,c.content || ''); else if(c.type==='CREATE_FOLDER') createFolder(c.path); else if(c.type==='DELETE') removePath(c.path); else if(c.type==='RENAME') renamePath(c.path,c.newName); else if(c.type==='OPEN_FILE') setActive(c.path); else if(c.type==='TERMINAL') runCommand(c.command); else if(c.type==='READ_FILE') agentReadFile(c.path); else if(c.type==='SEARCH_PROJECT') agentSearchProject(c.query); else if(c.type==='SEARCH_CAPABILITIES') agentSearchCapabilities(c.query); else if(c.type==='REPLACE_IN_FILE') agentReplaceExact(c.path,c.oldText,c.newText); else if(c.type==='REPLACE_LINE') agentReplaceLine(c.path,c.lineNumber,c.newText); else if(c.type==='INSERT_AFTER') agentInsertAfter(c.path,c.anchor,c.content); else if(c.type==='READ_PROJECT') agentInspectProject(); else if(c.type==='INSPECT_PROJECT') agentInspectProject(); else if(c.type==='CHECK_PROJECT') agentCheckProject(); else if(c.type==='CHECK_LINKS') agentCheckLinks(); }); } catch(e) { placeholder.content=`❌ خطأ: ${e.message || 'تعذر الاتصال'}`; placeholder.loading=false; } renderAll(); save(); }
+
+  function agentSearchProject(query) {
+    query = String(query || '').trim();
+    if (!query) { addTerminal('اكتب عبارة للبحث داخل المشروع.', 'warning'); return; }
+    const results=[]; const needle=query.toLowerCase();
+    for (const [path, content] of Object.entries(state.files)) {
+      const lines=String(content).split('\n');
+      lines.forEach((line, index) => { if (line.toLowerCase().includes(needle)) results.push(`${path}:${index+1}: ${line.trim()}`); });
+    }
+    addTerminal(`نتائج البحث عن "${query}" (${results.length}):\n${results.slice(0,120).join('\n') || 'لا توجد نتائج'}`, results.length?'info':'warning');
+  }
+  function agentSearchCapabilities(query) {
+    const content=state.files['/.webstudio/AGENT.md'] || '';
+    if (!query) { addTerminal(content, 'info'); return; }
+    const lines=content.split('\n').filter(line=>line.toLowerCase().includes(String(query).toLowerCase()));
+    addTerminal(`نتائج البحث في ملف قدرات الوكيل (${lines.length}):\n${lines.join('\n') || 'لا توجد نتائج'}`, lines.length?'info':'warning');
+  }
+  function agentBackup(path) {
+    state.agentBackups = state.agentBackups || [];
+    state.agentBackups.push({path, content:state.files[path], at:new Date().toISOString()});
+    state.agentBackups = state.agentBackups.slice(-50);
+  }
+  function agentReplaceExact(path, oldText, newText) {
+    path=normalizePath(path); const current=state.files[path];
+    if (current===undefined) { addTerminal(`لا يوجد ملف: ${path}`,'error'); return false; }
+    const count=current.split(oldText).length-1;
+    if (count !== 1) { addTerminal(`لم يتم التعديل: النص في ${path} يجب أن يظهر مرة واحدة فقط، وظهر ${count} مرة.`,'error'); return false; }
+    agentBackup(path); state.files[path]=current.replace(oldText,newText); setActive(path); addTerminal(`تم استبدال نص مطابق مرة واحدة في ${path}`,'success'); return true;
+  }
+  function agentReplaceLine(path, lineNumber, newText) {
+    path=normalizePath(path); const current=state.files[path]; const n=Number(lineNumber);
+    if (current===undefined) { addTerminal(`لا يوجد ملف: ${path}`,'error'); return false; }
+    const lines=current.split('\n'); if (!Number.isInteger(n) || n<1 || n>lines.length) { addTerminal(`رقم السطر غير صالح في ${path}: ${lineNumber}`,'error'); return false; }
+    agentBackup(path); lines[n-1]=newText; state.files[path]=lines.join('\n'); setActive(path); addTerminal(`تم تعديل السطر ${n} في ${path}`,'success'); return true;
+  }
+  function agentInsertAfter(path, anchor, content) {
+    path=normalizePath(path); const current=state.files[path];
+    if (current===undefined) { addTerminal(`لا يوجد ملف: ${path}`,'error'); return false; }
+    if (current.split(anchor).length-1 !== 1) { addTerminal(`مرساة الإدراج يجب أن تظهر مرة واحدة في ${path}`,'error'); return false; }
+    agentBackup(path); state.files[path]=current.replace(anchor, anchor+'\n'+content); setActive(path); addTerminal(`تم الإدراج بعد النص المحدد في ${path}`,'success'); return true;
+  }
+  function agentReadFile(path) {
+    path = normalizePath(path);
+    if (state.files[path] === undefined) { addTerminal(`لا يوجد ملف: ${path}`, 'error'); return; }
+    addTerminal(`--- ${path} ---\n${state.files[path].slice(0, 18000)}`, 'info');
+  }
+  function agentInspectProject() {
+    const files = Object.entries(state.files);
+    const summary = files.map(([path, content]) => `${path} (${content.length} حرف)`).join('\n');
+    const codeFiles = files.filter(([path]) => /\.(html?|css|js|jsx|ts|tsx|json)$/i.test(path));
+    addTerminal(`تحليل المشروع:\nالملفات: ${files.length}\nالمجلدات: ${state.folders.length}\nملفات الكود: ${codeFiles.length}\nالملف النشط: ${state.activeFile || '(لا يوجد)'}\n\n${summary}`, 'info');
+  }
+  function agentCheckProject() {
+    const issues=[]; const warnings=[];
+    const html=state.files['/index.html'] || '';
+    if (!html) issues.push('لا يوجد /index.html');
+    else {
+      if (!/<html[\s>]/i.test(html)) warnings.push('ملف index.html لا يحتوي على وسم html واضح');
+      if (!/<meta[^>]+viewport/i.test(html)) warnings.push('لا يوجد meta viewport');
+      const ids=[...html.matchAll(/\bid=["']([^"']+)["']/gi)].map(m=>m[1]);
+      const duplicates=ids.filter((id,i)=>ids.indexOf(id)!==i); if (duplicates.length) issues.push('معرفات HTML مكررة: '+[...new Set(duplicates)].join(', '));
+      const refs=[...html.matchAll(/(?:src|href)=["']([^"']+)["']/gi)].map(m=>m[1]).filter(x=>!/^([a-z]+:|\/\/|#|data:|mailto:|javascript:)/i.test(x));
+      for (const ref of refs) { const path=normalizePath(ref.split('?')[0].replace(/^\.\//,'')); if (state.files[path]===undefined) issues.push(`مرجع غير موجود: ${ref}`); }
+    }
+    for (const [path,content] of Object.entries(state.files)) {
+      if (/\.js$/i.test(path)) { if (/console\.error\s*\(/.test(content)) warnings.push(`${path}: يحتوي console.error`); if (/document\.getElementById\(['"]([^'"]+)/.test(content)) { const ids=[...content.matchAll(/getElementById\(['"]([^'"]+)/g)].map(m=>m[1]); for (const id of ids) if (html && !new RegExp(`id=["']${id}["']`).test(html)) warnings.push(`${path}: يستدعي عنصرًا غير موجود: ${id}`); } }
+      if (/\.json$/i.test(path)) { try { JSON.parse(content); } catch(e) { issues.push(`${path}: JSON غير صالح`); } }
+      if (/\.css$/i.test(path) && content.includes('{') && !content.includes('}')) issues.push(`${path}: CSS غير مكتمل أو ينقصه قوس إغلاق`);
+    }
+    const terminalErrors=(state.terminal||[]).filter(x=>x.type==='error').slice(-20).map(x=>x.text);
+    if (terminalErrors.length) issues.push('أخطاء مسجلة في الكونسول:\n' + terminalErrors.join('\n'));
+    const result=`فحص المشروع مكتمل — أخطاء: ${issues.length}، تحذيرات: ${warnings.length}\n${issues.length?'\nالأخطاء:\n- '+issues.join('\n- '):'لا توجد أخطاء ثابتة مكتشفة.'}${warnings.length?'\n\nالتحذيرات:\n- '+warnings.join('\n- '):''}`;
+    addTerminal(result, issues.length?'error':'success');
+    return result;
+  }
+  function agentCheckLinks() {
+    const html=state.files['/index.html']||''; const links=[...html.matchAll(/(?:href|src)=["']([^"']+)["']/gi)].map(m=>m[1]);
+    const local=links.filter(x=>!/^([a-z]+:|\/\/|#|data:|mailto:|javascript:)/i.test(x)); const external=links.filter(x=>/^https?:\/\//i.test(x));
+    const missing=local.filter(x=>state.files[normalizePath(x.split('?')[0].replace(/^\.\//,''))]===undefined);
+    const result=`فحص الروابط والموارد:\nالإجمالي: ${links.length}\nمحلية: ${local.length}\nخارجية: ${external.length}\nمفقودة: ${missing.length}${missing.length?'\\n'+missing.join('\\n'):''}`;
+    addTerminal(result, missing.length?'error':'success'); return result;
+  }
+  function runCommand(command) { const raw=command.trim(); if(!raw) return; addTerminal(`$ ${raw}`,'system'); const lower=raw.toLowerCase(); if(lower==='clear'||lower==='cls'){state.terminal=[];renderTerminal();save();return;} if(lower==='help'||lower==='مساعدة'){addTerminal('الأوامر: help, clear, ls, tree, pwd, cat <file>, touch <file>, mkdir <folder>, rm <path>, mv <old> <new>, open <file>, echo <text>','info');return;} if(lower==='pwd'){addTerminal('/workspace','info');return;} if(lower==='ls'||lower==='dir'||lower==='tree'){addTerminal(allPaths().join('\n'),'info');return;} if(lower.startsWith('cat ')||lower.startsWith('type ')){const p=normalizePath(raw.split(/\s+/).slice(1).join(' ')); addTerminal(state.files[p] ?? `الملف غير موجود: ${p}`,'info');return;} if(lower.startsWith('touch ')){createFile(raw.slice(6).trim(),''); return;} if(lower.startsWith('mkdir ')){createFolder(raw.slice(6).trim()); return;} if(lower.startsWith('rm ')||lower.startsWith('del ')){removePath(raw.split(/\s+/).slice(1).join(' ')); return;} if(lower.startsWith('mv ')){const parts=raw.split(/\s+/); if(parts.length>=3) renamePath(parts[1],parts.slice(2).join(' ')); else addTerminal('الصيغة: mv <old> <new>','warning'); return;} if(lower.startsWith('open ')){setActive(raw.slice(5).trim()); return;} if(lower.startsWith('echo ')){addTerminal(raw.slice(5),'info');return;} addTerminal(`أمر غير معروف: ${raw}. اكتب "help" للمساعدة.`,'warning'); }
+
+  function toast(message, type='') { const stack=$('#toast-stack'); const el=document.createElement('div'); el.className=`toast ${type}`; el.textContent=message; stack.appendChild(el); setTimeout(()=>el.remove(),2600); }
+  async function copyToClipboard(text) { try { await navigator.clipboard.writeText(text); toast('تم نسخ المحتوى', 'success'); } catch { const area=document.createElement('textarea'); area.value=text; document.body.appendChild(area); area.select(); document.execCommand('copy'); area.remove(); toast('تم نسخ المحتوى', 'success'); } }
+  function downloadText(name, text) { const blob=new Blob([text],{type:'text/plain;charset=utf-8'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),500); }
+  async function downloadProject() {
+    try {
+      if (!window.fflate || !window.fflate.zipSync) throw new Error('مكتبة ZIP لم تُحمّل بعد. تحقق من اتصال الإنترنت ثم أعد المحاولة.');
+      const files = {};
+      Object.entries(state.files).forEach(([path, content]) => { files[path.replace(/^\//, '') || 'index.html'] = new TextEncoder().encode(content); });
+      files['webstudio-project.json'] = new TextEncoder().encode(JSON.stringify({version:1, exportedAt:new Date().toISOString(), folders:state.folders, activeFile:state.activeFile, files:state.files}, null, 2));
+      const archive = window.fflate.zipSync(files, {level:6});
+      const blob = new Blob([archive], {type:'application/zip'});
+      const a = document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='webstudio-project.zip'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+      addTerminal('تم تصدير جميع ملفات المشروع إلى webstudio-project.zip','success'); toast('تم تنزيل ملف ZIP للمشروع','success');
+    } catch(error) { addTerminal('فشل تصدير ZIP: '+error.message,'error'); toast(error.message,'error'); }
+  }
+  function backupProject() { const backup={version:1,exportedAt:new Date().toISOString(),files:state.files,folders:state.folders,activeFile:state.activeFile}; downloadText('webstudio-backup.json', JSON.stringify(backup,null,2)); addTerminal('تم إنشاء نسخة احتياطية للمشروع.','success'); toast('تم حفظ النسخة الاحتياطية', 'success'); }
+  function resetWorkspace() { if (!confirm('سيتم حذف مشروع WebStudio المحفوظ في هذا المتصفح وإعادته للحالة الافتراضية. هل تريد المتابعة؟')) return; localStorage.removeItem('webstudio-local'); location.reload(); }
+
+  function openPalette() { $('#command-modal').classList.remove('hidden'); $('#command-search').value=''; renderCommands(''); $('#command-search').focus(); }
+  const commandItems=[['معاينة مباشرة','toggle-preview'],['فتح الطرفية','toggle-terminal'],['فتح الشات','toggle-chat'],['مستكشف الملفات','panel-explorer'],['بحث في الملفات','panel-search'],['تصدير المشروع كملف ZIP','download']];
+  function renderCommands(query) { const list=$('#command-list'); list.innerHTML=commandItems.filter(x=>x[0].includes(query)).map(x=>`<div class="command-option" data-command="${x[1]}">${x[0]}</div>`).join(''); $$('.command-option').forEach(el=>el.addEventListener('click',()=>{const cmd=el.dataset.command; $('#command-modal').classList.add('hidden'); if(cmd==='toggle-preview'){state.showPreview=!state.showPreview;renderAll();} if(cmd==='toggle-terminal'){state.showTerminal=!state.showTerminal;renderAll();} if(cmd==='toggle-chat'){state.showChat=!state.showChat;renderAll();} if(cmd==='panel-explorer'||cmd==='panel-search'){state.activeSidePanel=cmd==='panel-search'?'search':'explorer';renderAll();} if(cmd==='download')downloadProject();})); }
+
+  $$('.activity[data-panel]').forEach(btn=>btn.addEventListener('click',()=>{ const panel=btn.dataset.panel; if(panel==='chat'){state.showChat=!state.showChat; if(state.showChat)state.activeSidePanel='chat';} else {state.activeSidePanel=state.activeSidePanel===panel?'none':panel;} renderAll(); }));
+  $('#terminal-toggle').addEventListener('click',()=>{state.showTerminal=!state.showTerminal;renderAll();});
+  $('#chat-toggle').addEventListener('click',()=>{state.showChat=!state.showChat;renderAll();});
+  $('#preview-btn').addEventListener('click',()=>{state.showPreview=!state.showPreview;renderAll();});
+  $('#download-btn').addEventListener('click',downloadProject);
+  $('#backup-btn')?.addEventListener('click',backupProject);
+  $('#reset-btn')?.addEventListener('click',resetWorkspace);
+  $('#palette-btn').addEventListener('click',openPalette);
+  $('#close-command').addEventListener('click',()=>$('#command-modal').classList.add('hidden'));
+  $('#command-search').addEventListener('input',e=>renderCommands(e.target.value));
+  $('#command-modal').addEventListener('click',e=>{if(e.target.id==='command-modal')e.currentTarget.classList.add('hidden');});
+  $('#terminal-input').addEventListener('keydown',e=>{if(e.key==='Enter'){runCommand(e.target.value);e.target.value='';}});
+  $('#clear-terminal').addEventListener('click',()=>{state.terminal=[];renderTerminal();save();});
+  document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.shiftKey&&e.key.toLowerCase()==='p'){e.preventDefault();openPalette();} if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='s'){e.preventDefault();save();toast('تم حفظ المشروع محلياً','success');} if(e.key==='Escape'){$('#command-modal').classList.add('hidden');}});
+
+  renderAll();
+})();
+
+  </script>
+</body>
+</html>
